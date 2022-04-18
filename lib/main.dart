@@ -19,6 +19,7 @@ class Home extends StatelessWidget {
       ),
       body: Container(
         color: Colors.grey[400],
+        child: const Text('hello !!'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
