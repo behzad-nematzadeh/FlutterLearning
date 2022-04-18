@@ -18,9 +18,9 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[500],
       ),
       body: Center(
-        child: ElevatedButton(
+        child: ElevatedButton.icon(
           onPressed: () {},
-          child: const Text('click me!'),
+          icon: const Icon(Icons.add), label: const Text('add'),
           /*style: ElevatedButton.styleFrom(
             primary: Colors.blue, // background
             onPrimary: Colors.white, // foreground
