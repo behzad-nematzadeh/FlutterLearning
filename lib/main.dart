@@ -1,43 +1,52 @@
 import 'package:flutter/material.dart';
 
+import 'coworker.dart';
+
 void main() => runApp(
       const MaterialApp(
-        home: Home(),
+        home: CoworkerList(),
       ),
     );
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class CoworkerList extends StatefulWidget {
+  const CoworkerList({Key? key}) : super(key: key);
+
+  @override
+  State<CoworkerList> createState() => _CoworkerListState();
+}
+
+class _CoworkerListState extends State<CoworkerList> {
+  List<Coworker> coworkers = [
+    Coworker('Mohammad', 'Soltani'),
+    Coworker('Pejman', 'Sharifi'),
+    Coworker('Azam', 'norouzi'),
+  ];
+
+  Widget coworkerTemplate(coworker) {
+    return Card(
+      margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(coworker.name),
+          const SizedBox(height: 8),
+          Text(coworker.family),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: const Text('Flutter Learning'),
+        title: const Text('Coworker List'),
         centerTitle: true,
-        backgroundColor: Colors.red[500],
       ),
       body: Column(
-        children: [
-          Flexible(
-            child: Container(
-              //height: 100,
-              color: Colors.yellow,
-            ),
-          ),
-          Container(
-            color: Colors.blue,
-            width: 200,
-            height: 200,
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Text(
-          'click',
-        ),
-        backgroundColor: Colors.red[500],
+        children:
+            coworkers.map((coworker) => coworkerTemplate(coworker)).toList(),
       ),
     );
   }
