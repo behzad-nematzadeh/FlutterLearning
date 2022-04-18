@@ -18,20 +18,10 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[500],
       ),
       body: Center(
-        child: ElevatedButton.icon(
+        child: IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.add), label: const Text('add'),
-          /*style: ElevatedButton.styleFrom(
-            primary: Colors.blue, // background
-            onPrimary: Colors.white, // foreground
-          ),*/
-          /*style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.red),
-            padding: MaterialStateProperty.all(const EdgeInsets.all(8)),
-            textStyle: MaterialStateProperty.all(
-              const TextStyle(fontSize: 20),
-            ),
-          ),*/
+          icon: const Icon(Icons.email),
+          color: Colors.grey,
         ),
       ),
       floatingActionButton: FloatingActionButton(
