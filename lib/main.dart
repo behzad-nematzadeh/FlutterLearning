@@ -19,8 +19,8 @@ class Home extends StatelessWidget {
       ),
       body: Container(
         color: Colors.amber,
-        height: 100,
-        child: Row(
+        width: 100,
+        child: Column(
           //mainAxisSize: MainAxisSize.max,
           //mainAxisAlignment: MainAxisAlignment.start,
           //mainAxisAlignment: MainAxisAlignment.center,
