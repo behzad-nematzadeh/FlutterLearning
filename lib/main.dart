@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded(
+          Flexible(
             child: Container(
               //height: 100,
               color: Colors.yellow,
