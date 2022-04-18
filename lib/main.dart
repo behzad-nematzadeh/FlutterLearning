@@ -17,12 +17,22 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[500],
       ),
-      body: const Center(
-        child: Icon(
-          Icons.access_alarm,
-          size: 200,
-          color: Colors.lightBlue,
-        )
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {},
+          child: const Text('click me!'),
+          /*style: ElevatedButton.styleFrom(
+            primary: Colors.blue, // background
+            onPrimary: Colors.white, // foreground
+          ),*/
+          /*style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.red),
+            padding: MaterialStateProperty.all(const EdgeInsets.all(8)),
+            textStyle: MaterialStateProperty.all(
+              const TextStyle(fontSize: 20),
+            ),
+          ),*/
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
