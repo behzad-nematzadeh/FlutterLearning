@@ -17,42 +17,20 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[500],
       ),
-      body: Container(
-        color: Colors.amber,
-        width: 100,
-        child: Column(
-          //mainAxisSize: MainAxisSize.max,
-          //mainAxisAlignment: MainAxisAlignment.start,
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //mainAxisAlignment: MainAxisAlignment.end,
-          //mainAxisAlignment: MainAxisAlignment.spaceAround,
-          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //crossAxisAlignment: CrossAxisAlignment.start,
-          //crossAxisAlignment: CrossAxisAlignment.center,
-          //crossAxisAlignment: CrossAxisAlignment.end,
-          //crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              color: Colors.red,
-              padding: const EdgeInsets.all(16),
-              child: const Text(
-                '1',
-              ),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              //height: 100,
+              color: Colors.yellow,
             ),
-            ElevatedButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.email),
-              label: const Text('send email'),
-            ),
-            Container(
-              color: Colors.green,
-              child: const Icon(
-                Icons.add,
-              ),
-            ),
-          ],
-        ),
+          ),
+          Container(
+            color: Colors.blue,
+            width: 200,
+            height: 200,
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
