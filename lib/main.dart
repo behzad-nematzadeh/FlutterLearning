@@ -7,6 +7,10 @@ void main() => runApp(
             title: const Text('Flutter Learning'),
           ),
           body: const Center(child: Text('hello guys')),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+            child: const Text('click'),
+          ),
         ),
       ),
     );
