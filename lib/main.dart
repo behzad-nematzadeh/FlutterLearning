@@ -17,11 +17,41 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[500],
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Text(
-          'hello !!',
-          style: TextStyle(backgroundColor: Colors.red),
+      body: Container(
+        color: Colors.amber,
+        height: 100,
+        child: Row(
+          //mainAxisSize: MainAxisSize.max,
+          //mainAxisAlignment: MainAxisAlignment.start,
+          //mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.end,
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.end,
+          //crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              color: Colors.red,
+              padding: const EdgeInsets.all(16),
+              child: const Text(
+                '1',
+              ),
+            ),
+            ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.email),
+              label: const Text('send email'),
+            ),
+            Container(
+              color: Colors.green,
+              child: const Icon(
+                Icons.add,
+              ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
