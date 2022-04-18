@@ -18,10 +18,11 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[500],
       ),
       body: const Center(
-        child: Image(
-          image: AssetImage(
-              'assets/julia-ivanina.jpg'),
-        ),
+        child: Icon(
+          Icons.access_alarm,
+          size: 200,
+          color: Colors.lightBlue,
+        )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
