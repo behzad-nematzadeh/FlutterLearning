@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/coworker_info.dart';
 
 import 'coworker.dart';
 
@@ -27,22 +28,28 @@ class _HomePageState extends State<HomePage> {
   ];
 
   Widget coworkerTemplate(coworker) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              coworker.name,
-              style: Theme.of(context).textTheme.subtitle1,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              coworker.family,
-              style: Theme.of(context).textTheme.caption,
-            ),
-          ],
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, CoworkerInfo.routeName,
+            arguments: coworker);
+      },
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                coworker.name,
+                style: Theme.of(context).textTheme.subtitle1,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                coworker.family,
+                style: Theme.of(context).textTheme.caption,
+              ),
+            ],
+          ),
         ),
       ),
     );
