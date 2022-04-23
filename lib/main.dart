@@ -1,12 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/app_theme_data.dart';
 
 import 'coworker.dart';
 
 void main() => runApp(
-      const MaterialApp(
-        home: CoworkerList(),
-      ),
+      Builder(builder: (context) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: AppThemeData.lightThemeData(context),
+          darkTheme: AppThemeData.darkThemeData(context),
+          home: const CoworkerList(),
+        );
+      }),
     );
 
 class CoworkerList extends StatefulWidget {
@@ -21,18 +27,35 @@ class _CoworkerListState extends State<CoworkerList> {
     Coworker('Mohammad', 'Soltani'),
     Coworker('Pejman', 'Sharifi'),
     Coworker('Azam', 'norouzi'),
+    Coworker('Mohsen', 'Pejam'),
+    Coworker('Behzad', 'Nematzadeh'),
+    Coworker('HamidReza', 'Mohammadi'),
+    Coworker('Zahra', 'Nematzadeh'),
+    Coworker('Soudeh', 'Hojatpanah'),
+    Coworker('Soudeh', 'Hashemi'),
+    Coworker('Narges', 'Frahani'),
+    Coworker('Mohammad', 'Babaei'),
+    Coworker('Saeed', 'Dehghani'),
   ];
 
   Widget coworkerTemplate(coworker) {
     return Card(
-      margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(coworker.name),
-          const SizedBox(height: 8),
-          Text(coworker.family),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              coworker.name,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              coworker.family,
+              style: Theme.of(context).textTheme.caption,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -40,40 +63,17 @@ class _CoworkerListState extends State<CoworkerList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
-      body: Stack(
-        //alignment: AlignmentDirectional.topStart,
-        children: [
-          Image(
-            image: const NetworkImage(
-                'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000'),
-            height: 240,
-            width: MediaQuery.of(context).size.width,
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () => {},
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                  ),
-                ),
-                IconButton(
-                  onPressed: () => {},
-                  icon: const Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
+      appBar: AppBar(
+        title: const Text('Coworker List'),
+      ),
+      body: ListView(
+        padding: EdgeInsets.only(bottom: 80),
+        children:
+            coworkers.map((coworker) => coworkerTemplate(coworker)).toList(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
       ),
     );
   }
