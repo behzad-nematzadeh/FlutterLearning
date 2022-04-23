@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'coworker.dart';
@@ -40,13 +41,39 @@ class _CoworkerListState extends State<CoworkerList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        title: const Text('Coworker List'),
-        centerTitle: true,
-      ),
-      body: Column(
-        children:
-            coworkers.map((coworker) => coworkerTemplate(coworker)).toList(),
+      body: Stack(
+        //alignment: AlignmentDirectional.topStart,
+        children: [
+          Image(
+            image: const NetworkImage(
+                'https://img.freepik.com/free-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000'),
+            height: 240,
+            width: MediaQuery.of(context).size.width,
+            fit: BoxFit.cover,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  onPressed: () => {},
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.white,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => {},
+                  icon: const Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
