@@ -10,16 +10,21 @@ class CoworkerInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as Coworker;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('CoworkerInfo'),
+    return Theme(
+      data: Theme.of(context).copyWith(
+        appBarTheme: const AppBarTheme(color: Colors.blue),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Text(args.name),
-            Text(args.family),
-          ],
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('CoworkerInfo'),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              Text(args.name),
+              Text(args.family),
+            ],
+          ),
         ),
       ),
     );
