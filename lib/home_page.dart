@@ -60,6 +60,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Coworker List'),
+        leadingWidth: 0,
+        leading: const SizedBox.shrink(),
       ),
       body: ListView(
         padding: const EdgeInsets.only(bottom: 80),
